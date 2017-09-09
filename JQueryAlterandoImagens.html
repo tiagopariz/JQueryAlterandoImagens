@@ -14,13 +14,29 @@
 		<script src="js/jquery-3.2.1.js"></script>
 		
 		<script>
+			//$(function() {
+			//	$(".selecao a").click(function() {
+			//		var img = $(this).attr("href");
+			//		$("#imgprincipal").attr({ src : img });
+			//		return false;
+			//	});
+			//});		
+	
 			$(function() {
-				$(".selecao a").click(function() {
+				var old = null;
+				$(".selecao a").hover(function() {
 					var img = $(this).attr("href");
 					$("#imgprincipal").attr({ src : img });
+					if (old != null) {
+						$(old).css({width : "110px"});
+					}
+					old = $('img', this);
+					$(old).css({width : "180px"});
 					return false;
 				});
-			});
+			});			
+		</script>
+			
 		</script>
 		
 	</head>
